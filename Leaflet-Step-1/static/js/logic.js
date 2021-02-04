@@ -6,7 +6,6 @@ var queryUrl = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_mo
 d3.json(queryUrl, function(data) {
     // Once we get a response, send the data.features object to the createFeatures function
     createFeatures(data.features);
-    console.log(data.features);
 });
 
 function createMap(earthquakes) {
@@ -16,7 +15,6 @@ function createMap(earthquakes) {
         attribution: "© <a href='https://www.mapbox.com/about/maps/'>Mapbox</a> © <a href='http://www.openstreetmap.org/copyright'>OpenStreetMap</a> <strong><a href='https://www.mapbox.com/map-feedback/' target='_blank'>Improve this map</a></strong>",
         tileSize: 512,
         maxZoom: 20,
-
         id: "mapbox/light-v10",
         accessToken: API_KEY
     });
